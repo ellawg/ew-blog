@@ -1,0 +1,98 @@
+<a class="site-title" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+
+
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="site-branding">
+      <a href="{{ page.url | relative_url }}"><img src="/assets/images/logo.png"></a>
+    </div>
+
+    <div class="top-bar">
+        <div class="nav-open">
+          <i class="ion-chevron-right" aria-hidden="true"></i>
+        </div>
+      </div>
+   
+     <div id="menu">
+       <div class="nav-close">
+         <i class="ion-close" aria-hidden="true"></i>
+       </div>
+       <nav>
+         <div class="nav-container">
+           <ul>
+             <li id="open_om-ella"><a href="#">om ella</a></li>
+             <li id="open_kategorier"><a href="#">kategorier</a></li>
+             <li id="open_arkiv"><a href="#">arkiv</a></li>
+           </ul>
+         </div>
+       </nav>
+     </div>
+   
+   <div id="menu_about">
+       <div class="slide-down">
+         <i class="ion-chevron-down" aria-hidden="true"></i>
+       </div>
+       <div class="description">
+       <p>Hej jag heter Ella.</p>
+     </div>
+   </div>
+   
+   <div id="menu_categories">
+     <div class="slide-down">
+       <i class="ion-chevron-down" aria-hidden="true"></i>
+     </div>
+     <div class="categories">
+       <p>kategorier</p>
+        {% capture tags %}
+          {% for tag in site.tags %}
+            {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+          {% endfor %}
+        {% endcapture %}
+        {% assign sortedtags = tags | split:' ' | sort %}
+          {% for tag in sortedtags reversed %}
+        {% assign tagitems = tag | split: '#' %}
+         <li><a href="/blog/tag/{{ tagitems[1] }}/">{{ tagitems[1] }} ({{ tagitems[2] }})</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+   </div>
+   
+   <div id="menu_archive">
+     <div class="slide-down">
+       <i class="ion-chevron-down" aria-hidden="true"></i>
+     </div>
+   
+     <div class="archive-page">
+       <p>arkiv</p>
+       
+       {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'"  %}
+         {% for year in postsByYear %}
+          <h3>{{ year.name }}</h3>
+            {% assign postsByMonth = site.posts | group_by_exp:"post", "post.date | date: '%b'"  %}
+              {% for month in postsByMonth %}
+                <li><a href="{{ month.name }}">{{ month.name }}</a></li>
+              {% endfor %}
+         {% endfor %}
+         
+         
+
+       <h2>Archive</h2>
+       {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
+       {% for yearMonth in postsByYearMonth %}
+         <h3>{{ yearMonth.name }}</h3>
+           <ul>
+             {% for post in yearMonth.items %}
+               <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+             {% endfor %}
+           </ul>
+       {% endfor %}
+
+   
+   
+    </div>
+   
+   
+   </div>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+@import "custom_vars_mixins.scss";
+@import "custom_menu_header.scss";
+
+
+// Universal
+
+body{
+  @include body_typo;
+
+  ul{
+    list-style: none;
+
+  }
+
+  & a{
+    color: $tungsten;
+  }
+    & a:hover{
+      color: $terracotta;
+    }
+}
+
+
+.site-header{
+  text-align: center;
+  background-image: url("/assets/images/header_img.jpg");
+  width: 100%;
+  height: $header_height;
+}
+
+
+// Header branding
+
+.site-branding{
+  & img{
+    margin-top: calc(#{$header_height} - 125px);
+    width: 90px;
+    text-align: center;
+  }
+}
+
+.site-title{
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  transform: rotate(-90deg);
+  transform-origin: right bottom;
+  margin: 0 0 0 -5px;
+  z-index: 1;
+  @include site_title_typo;
+      &:hover{
+        color: $mint;
+  }
+}

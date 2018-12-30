@@ -1,0 +1,162 @@
+
+//
+// M E N Y H E A D E R
+//
+
+#menu{
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: $terracotta;
+  color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 2;
+  & nav{
+    position:relative;
+    top: 20%;
+    height: 60%;
+    text-align: center;
+    font-size: 54px;
+  }
+}
+
+.nav-close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 200%;
+}
+
+.nav-open{
+  position: absolute;
+  left: 15px;
+  font-size: 200%;
+  height: 30px;
+}
+
+
+.top-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+}
+
+
+// Om Ella
+
+#menu_about{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: $dove;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#menu_about .slide-down {
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.nav-container a{
+  color: #fff;
+  &:hover{
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.open_om-ella{
+  background-color: $dove;
+
+}
+
+.slide-down{
+  font-size: 200%;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.description{
+  text-align: center;
+  margin-top: 30vh;
+}
+
+// Kategorier
+
+#menu_categories{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: $forest;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.categories{
+  text-align: center;
+  list-style: none;
+  padding-top: 5%;
+  & p{
+    font-size: 400%;
+    color: $latte;
+    margin-bottom: 2%
+  }
+  & a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 130%;
+  }
+  & a:hover{
+    color: $terracotta;
+    text-decoration: underline;
+
+  }
+}
+
+// Arkiv
+
+#menu_archive{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: $latte;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.archive-page{
+  text-align: center;
+  list-style: none;
+  padding-top: 5%;
+  & p{
+    font-size: 400%;
+    color: $forest;
+    margin-bottom: 2%
+  }
+  & a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 130%;
+  }
+  & a:hover{
+    color: $terracotta;
+    text-decoration: underline;
+
+  }
+}

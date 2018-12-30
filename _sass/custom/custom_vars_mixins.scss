@@ -1,0 +1,137 @@
+//
+// V A R I A B L E S
+//
+
+// Measurements
+
+$header_height: 40vh;
+$entry_img_width: 1000px;
+$content_area_width: 600px;
+
+$edge_to_content: calc(((100vw - #{$content_area_width}) / -2));
+$edge_to_img: calc(((100vw - #{$entry_img_width}) / 2));
+
+
+// Typography
+
+$main_font: 'Usual', Arial, sans-serif;
+$numbers_font: Arial, sans-serif;
+
+// Colors
+
+$terracotta: #af7558;
+$midnight: #353a3d;
+$mint: #bacccb;
+$fog: #ededed;
+
+
+$forest: #718774;
+$tungsten: #78888e;
+$latte: #c7bfb7;
+$dove: #b6c5d3;
+
+
+
+//
+// M I X I N S
+//
+
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+  -moz-transform: rotate(#{$degrees}deg);
+  -ms-transform: rotate(#{$degrees}deg);
+  -o-transform: rotate(#{$degrees}deg);
+  transform: rotate(#{$degrees}deg);
+
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+ }
+
+// Typography
+
+@mixin body_typo {
+  font-family: $main_font;
+  letter-spacing: 1px;
+}
+
+@mixin site_title_typo {
+    font-size: 10px;
+    font-weight: 300;
+    color: $midnight;
+    text-decoration: none;
+}
+
+// Entries
+
+@mixin entry_bottom_border {
+  background:url('/assets/images/border_img.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding-bottom: 6%;
+  margin:  7% 0px  7% 0px;
+}
+
+@mixin entry_header_typo{
+  letter-spacing: 1.5px;
+  color: $midnight;
+
+}
+
+@mixin entry_meta_typo{
+  color: $terracotta;
+  font-family: $numbers_font;
+  font-style: italic;
+}
+
+@mixin entry_text_typo {
+  color: $midnight;
+  letter-spacing: 0.3px;
+  font-size: 0.9em;
+  line-height: 170%;
+  padding: 10px 0 20px 0;
+}
+
+@mixin entry_tags_typo {
+  text-transform: uppercase;
+  font-size: 0.5em;
+	letter-spacing: 1.5px;
+}
+
+@mixin entry_comments_typo {
+  font-size: 1.3em;
+  text-transform: lowercase;
+}
+@mixin page_heading_typo{
+  margin-top: 5%;
+  color: $fog;
+  text-transform: uppercase;
+  font-size: 1.7em;
+  letter-spacing: 7px;
+}
+
+@mixin btn_general {
+  background-color: $dove;
+  color: #fff;
+  border: none;
+}
+
+@mixin btn_hover {
+  background-color: $forest;
+  color: $fog;
+}
+
+// Pagination
+
+@mixin nav_links {
+  font-size: 1.5em;
+  color: $terracotta;
+}
+
+@mixin trail_links{
+  font-family: $numbers_font;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+
+}
+

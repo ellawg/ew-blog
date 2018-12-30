@@ -1,0 +1,54 @@
+@import "custom_vars_mixins.scss";
+
+
+//
+// C O M M E N T S
+//
+
+.comments-area{
+  background-color: $fog;
+  padding: 30px 0 30px 0;
+}
+
+.comments-header{
+	text-align: center;
+	padding-bottom: 10%;
+}
+
+.comment-metadata{
+  font-size: 70%;
+  padding-bottom: 2%;
+}
+
+.reply{
+	padding-bottom: 10%;
+}
+
+a.comment-reply-link{
+    @include btn_general;
+		font-size: 0.9em;
+		letter-spacing: 2px;
+		padding: 2% 3% 2% 3%;
+		text-transform: lowercase;
+		text-decoration: none;
+		&:hover{
+			@include btn_hover;
+		}
+}
+
+
+input#submit.submit{
+	@include entry_tags_typo;
+  @include btn_general;
+	font-size: 0.6em;
+	padding: 10px;
+	&:hover{
+		@include btn_hover;
+	}
+}
+
+textarea#comment{
+	background-color: #fff;
+	border: none;
+
+}
